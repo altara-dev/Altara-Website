@@ -160,10 +160,17 @@ const Footer = () => {
         </div>
 
         {/* Bottom Copyright */}
-        <div className="pt-6 border-t border-border/30">
+        <div className="pt-6 border-t border-border/30 mb-8">
           <p className="text-xs text-muted-foreground">
             © {currentYear}, Matmajor Tech Pvt Ltd. All rights reserved.
           </p>
+        </div>
+
+        {/* Large ALTARA Logo */}
+        <div className="mt-12 pt-8 border-t border-border/30">
+          <h1 className="text-[6rem] md:text-[10rem] lg:text-[14rem] font-bold leading-none tracking-wide text-foreground select-none">
+            ALTARA
+          </h1>
         </div>
       </div>
     </footer>

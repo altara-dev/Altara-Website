@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -15,16 +15,16 @@
     --popover: 230 40% 6%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 208 100% 83%;
+    --primary: 206 93% 71%;
     --primary-foreground: 230 50% 3%;
 
-    --secondary: 208 100% 83%;
+    --secondary: 206 93% 71%;
     --secondary-foreground: 230 50% 3%;
 
     --muted: 230 30% 12%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 208 100% 83%;
+    --accent: 206 93% 71%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84% 60%;
@@ -32,25 +32,25 @@
 
     --border: 230 30% 15%;
     --input: 230 30% 15%;
-    --ring: 208 100% 83%;
+    --ring: 206 93% 71%;
 
     --radius: 0.75rem;
 
     /* Custom Altara colors */
     --altara-black: 230 50% 3%;
     --altara-dark: 230 40% 6%;
-    --altara-blue: 208 100% 83%;
-    --altara-cyan: 208 100% 83%;
-    --altara-glow: 208 100% 83%;
+    --altara-blue: 206 93% 71%;
+    --altara-cyan: 206 93% 71%;
+    --altara-glow: 206 93% 71%;
 
     /* Gradients */
-    --gradient-blue-cyan: linear-gradient(135deg, hsl(208 100% 83%) 0%, hsl(208 100% 83%) 100%);
+    --gradient-blue-cyan: linear-gradient(135deg, hsl(206 93% 71%) 0%, hsl(206 93% 71%) 100%);
     --gradient-dark: linear-gradient(180deg, hsl(230 50% 3%) 0%, hsl(230 40% 8%) 100%);
-    --gradient-glow: radial-gradient(ellipse at 50% 50%, hsl(208 100% 83% / 0.15) 0%, transparent 70%);
+    --gradient-glow: radial-gradient(ellipse at 50% 50%, hsl(206 93% 71% / 0.15) 0%, transparent 70%);
     
     /* Shadows */
-    --shadow-glow: 0 0 60px hsl(208 100% 83% / 0.3);
-    --shadow-glow-sm: 0 0 30px hsl(208 100% 83% / 0.2);
+    --shadow-glow: 0 0 60px hsl(206 93% 71% / 0.3);
+    --shadow-glow-sm: 0 0 30px hsl(206 93% 71% / 0.2);
     --shadow-card: 0 4px 40px hsl(230 50% 3% / 0.5);
   }
 
@@ -71,7 +71,7 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
   }
 
   /* Custom Scrollbar Styling */
@@ -89,7 +89,7 @@
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(208 100% 75%);
+    background: hsl(206 93% 63%);
   }
 
   /* Firefox scrollbar */
@@ -102,21 +102,21 @@
 @layer components {
   .gradient-text {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(to right, #ffffff 0%, #AAD7FF 100%);
+    background-image: linear-gradient(to right, #ffffff 0%, #70BEFA 100%);
   }
 
   .text-blue-accent {
-    color: #AAD7FF;
+    color: #70BEFA;
   }
 
   .glow-blue {
-    box-shadow: 0 0 40px hsl(208 100% 83% / 0.4), 0 0 80px hsl(208 100% 83% / 0.2);
+    box-shadow: 0 0 40px hsl(206 93% 71% / 0.4), 0 0 80px hsl(206 93% 71% / 0.2);
   }
 
   .glow-border {
     border: 1px solid transparent;
     background: linear-gradient(hsl(230 40% 6%), hsl(230 40% 6%)) padding-box,
-                linear-gradient(135deg, hsl(208 100% 83% / 0.5) 0%, hsl(208 100% 83% / 0.5) 100%) border-box;
+                linear-gradient(135deg, hsl(206 93% 71% / 0.5) 0%, hsl(206 93% 71% / 0.5) 100%) border-box;
   }
 
   .glass-card {
@@ -129,7 +129,7 @@
   }
 
   .hover-glow:hover {
-    box-shadow: 0 0 30px hsl(208 100% 83% / 0.3);
+    box-shadow: 0 0 30px hsl(206 93% 71% / 0.3);
   }
 }
 

@@ -53,7 +53,7 @@ const ProductSection = () => {
           <div className="grid md:grid-cols-2 gap-0">
             {/* Left - Visual */}
             <div className="relative p-8 md:p-12 bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center min-h-[300px]">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(208_100%_83%_/_0.1),transparent_70%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(206_93%_71%_/_0.1),transparent_70%)]" />
               <div className="relative text-center">
                 <div className="w-24 h-24 mx-auto rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-6 shadow-lg glow-blue">
                   <MessageSquare className="w-12 h-12 text-primary-foreground" />

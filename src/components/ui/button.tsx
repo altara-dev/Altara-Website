@@ -16,9 +16,9 @@ const buttonVariants = cva(
         ghost: "hover:bg-muted hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         // Altara custom variants
-        hero: "bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold shadow-lg hover:shadow-[0_0_30px_hsl(208_100%_83%_/_0.4)] hover:scale-105",
-        "hero-outline": "border border-primary/50 bg-transparent text-foreground hover:bg-primary/10 hover:border-primary hover:shadow-[0_0_20px_hsl(208_100%_83%_/_0.2)]",
-        glow: "bg-muted text-foreground border border-border hover:border-primary/50 hover:shadow-[0_0_25px_hsl(208_100%_83%_/_0.3)]",
+        hero: "bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold shadow-lg hover:shadow-[0_0_30px_hsl(206_93%_71%_/_0.4)] hover:scale-105",
+        "hero-outline": "border border-primary/50 bg-transparent text-foreground hover:bg-primary/10 hover:border-primary hover:shadow-[0_0_20px_hsl(206_93%_71%_/_0.2)]",
+        glow: "bg-muted text-foreground border border-border hover:border-primary/50 hover:shadow-[0_0_25px_hsl(206_93%_71%_/_0.3)]",
         nav: "bg-transparent text-muted-foreground hover:text-foreground hover:bg-transparent",
       },
       size: {

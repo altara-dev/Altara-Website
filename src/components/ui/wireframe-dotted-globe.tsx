@@ -140,16 +140,16 @@ export default function RotatingEarth({ width = 800, height = 600, className = "
         containerHeight / 2,
         currentScale
       )
-      gradient.addColorStop(0, "#0a1628")
-      gradient.addColorStop(0.7, "#061018")
-      gradient.addColorStop(1, "#030810")
+      gradient.addColorStop(0, "#000000")
+      gradient.addColorStop(0.7, "#010204")
+      gradient.addColorStop(1, "#020408")
       context.fillStyle = gradient
       context.fill()
       
       // Globe border with light blue glow
-      context.strokeStyle = "#AAD7FF"
+      context.strokeStyle = "#70BEFA"
       context.lineWidth = 1.5 * scaleFactor
-      context.shadowColor = "#AAD7FF"
+      context.shadowColor = "#70BEFA"
       context.shadowBlur = 20
       context.stroke()
       context.shadowBlur = 0
@@ -159,8 +159,8 @@ export default function RotatingEarth({ width = 800, height = 600, className = "
         const graticule = d3.geoGraticule()
         context.beginPath()
         path(graticule())
-        context.strokeStyle = "#AAD7FF"
-        context.lineWidth = 0.5 * scaleFactor
+        context.strokeStyle = "#70BEFA"
+        context.lineWidth = 1.0 * scaleFactor
         context.globalAlpha = 0.15
         context.stroke()
         context.globalAlpha = 1
@@ -170,7 +170,7 @@ export default function RotatingEarth({ width = 800, height = 600, className = "
         landFeatures.features.forEach((feature: any) => {
           path(feature)
         })
-        context.strokeStyle = "#AAD7FF"
+        context.strokeStyle = "#70BEFA"
         context.lineWidth = 0.8 * scaleFactor
         context.globalAlpha = 0.6
         context.stroke()
@@ -188,7 +188,7 @@ export default function RotatingEarth({ width = 800, height = 600, className = "
           ) {
             context.beginPath()
             context.arc(projected[0], projected[1], 1.5 * scaleFactor, 0, 2 * Math.PI)
-            context.fillStyle = "#AAD7FF"
+            context.fillStyle = "#70BEFA"
             context.globalAlpha = 0.8
             context.fill()
             context.globalAlpha = 1
