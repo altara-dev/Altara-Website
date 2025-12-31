@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import WhyAltara from "@/components/WhyAltara";
 import ProductSection from "@/components/ProductSection";
 import NeoEmbed from "@/components/NeoEmbed";
+import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -15,6 +16,7 @@ const Index = () => {
         <WhyAltara />
         <ProductSection />
         <NeoEmbed />
+        <FAQSection />
         <ContactSection />
       </main>
       <Footer />

@@ -26,46 +26,45 @@ const values = [
 const WhyAltara = () => {
   return (
     <section id="about" className="py-24 md:py-32 relative">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/10 to-background" />
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[150px]" />
+      {/* Subtle background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-muted border border-border text-sm text-primary mb-6">
-            About Us
-          </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
             <span className="text-foreground">Why </span>
             <span className="gradient-text">Altara?</span>
           </h2>
-          <p className="text-lg text-muted-foreground">
-            We believe AI should be invisible in its complexity, 
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            We believe technology should be invisible in its complexity, 
             yet undeniable in its impact.
           </p>
         </div>
 
-        {/* Values Grid */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        {/* Values Grid - Elegant and Minimal */}
+        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {values.map((value, index) => (
             <div
               key={index}
-              className="group p-8 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all duration-500 hover:shadow-[0_0_40px_hsl(208_100%_83%_/_0.1)]"
+              className="group"
             >
-              <div className="flex items-start gap-5">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 border border-border flex items-center justify-center shrink-0 group-hover:border-primary/40 transition-colors">
-                  <value.icon className="w-7 h-7 text-primary" />
+              <div className="flex items-start gap-6">
+                <div className="w-12 h-12 rounded-lg bg-muted/50 border border-border/50 flex items-center justify-center shrink-0 group-hover:border-border transition-colors">
+                  <value.icon className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
                 </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
+                <div className="flex-1">
+                  <h3 className="text-2xl font-semibold text-foreground mb-3 tracking-tight">
                     {value.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed text-base">
                     {value.description}
                   </p>
                 </div>
               </div>
+              {index < values.length - 1 && (
+                <div className="mt-12 md:hidden border-t border-border/30" />
+              )}
             </div>
           ))}
         </div>
