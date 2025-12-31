@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 230 50% 3%;
+    --foreground: 210 40% 98%;
+
+    --card: 230 40% 6%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 230 40% 6%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 208 100% 83%;
+    --primary-foreground: 230 50% 3%;
+
+    --secondary: 208 100% 83%;
+    --secondary-foreground: 230 50% 3%;
+
+    --muted: 230 30% 12%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 208 100% 83%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 230 30% 15%;
+    --input: 230 30% 15%;
+    --ring: 208 100% 83%;
+
+    --radius: 0.75rem;
+
+    /* Custom Altara colors */
+    --altara-black: 230 50% 3%;
+    --altara-dark: 230 40% 6%;
+    --altara-blue: 208 100% 83%;
+    --altara-cyan: 208 100% 83%;
+    --altara-glow: 208 100% 83%;
+
+    /* Gradients */
+    --gradient-blue-cyan: linear-gradient(135deg, hsl(208 100% 83%) 0%, hsl(208 100% 83%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(230 50% 3%) 0%, hsl(230 40% 8%) 100%);
+    --gradient-glow: radial-gradient(ellipse at 50% 50%, hsl(208 100% 83% / 0.15) 0%, transparent 70%);
+    
+    /* Shadows */
+    --shadow-glow: 0 0 60px hsl(208 100% 83% / 0.3);
+    --shadow-glow-sm: 0 0 30px hsl(208 100% 83% / 0.2);
+    --shadow-card: 0 4px 40px hsl(230 50% 3% / 0.5);
+  }
+
+  .dark {
+    --background: 230 50% 3%;
+    --foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Custom Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(208 100% 75%);
+  }
+
+  /* Firefox scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary)) hsl(var(--background));
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(to right, #ffffff 0%, #AAD7FF 100%);
+  }
+
+  .text-blue-accent {
+    color: #AAD7FF;
+  }
+
+  .glow-blue {
+    box-shadow: 0 0 40px hsl(208 100% 83% / 0.4), 0 0 80px hsl(208 100% 83% / 0.2);
+  }
+
+  .glow-border {
+    border: 1px solid transparent;
+    background: linear-gradient(hsl(230 40% 6%), hsl(230 40% 6%)) padding-box,
+                linear-gradient(135deg, hsl(208 100% 83% / 0.5) 0%, hsl(208 100% 83% / 0.5) 100%) border-box;
+  }
+
+  .glass-card {
+    @apply backdrop-blur-xl border border-border/50;
+    background: linear-gradient(135deg, hsl(230 40% 8% / 0.8) 0%, hsl(230 40% 6% / 0.9) 100%);
+  }
+
+  .hover-glow {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 30px hsl(208 100% 83% / 0.3);
+  }
+}
+
+@layer utilities {
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) translateX(10px) rotate(2deg);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.6s ease-out forwards;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+}
