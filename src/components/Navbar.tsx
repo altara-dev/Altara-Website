@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -8,10 +7,20 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Mail, Phone, MessageCircle } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
+
+  useEffect(() => {
+    const handleOpenContactDialog = () => {
+      setIsContactDialogOpen(true);
+    };
+    window.addEventListener("openContactDialog", handleOpenContactDialog);
+    return () => {
+      window.removeEventListener("openContactDialog", handleOpenContactDialog);
+    };
+  }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -35,16 +44,19 @@ const Navbar = () => {
         
         <nav className="relative z-10 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-1 group shrink-0 ml-1">
+        <button 
+          onClick={() => scrollToSection("hero")}
+          className="flex items-center gap-1 group shrink-0 ml-1 cursor-pointer"
+        >
           <img 
             src="/logo.png" 
             alt="Altara" 
             className="h-8 w-auto object-contain"
           />
-          <span className="text-lg font-semibold text-foreground uppercase tracking-wide">
+          <span className="text-lg font-bold text-foreground uppercase tracking-wide">
             ALTARA
           </span>
-        </Link>
+        </button>
 
         {/* Nav Links - Centered */}
         <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
@@ -61,7 +73,7 @@ const Navbar = () => {
             Solutions
           </button>
           <button
-            onClick={() => scrollToSection("contact")}
+            onClick={() => scrollToSection("faq")}
             className="text-foreground hover:text-primary transition-colors text-sm font-medium whitespace-nowrap"
           >
             FAQ
@@ -82,23 +94,21 @@ const Navbar = () => {
 
       {/* Contact Dialog */}
       <Dialog open={isContactDialogOpen} onOpenChange={setIsContactDialogOpen}>
-        <DialogContent className="sm:max-w-md rounded-2xl">
-          <DialogHeader>
-            <DialogTitle>Get in Touch</DialogTitle>
-            <DialogDescription>
+        <DialogContent className="sm:max-w-md rounded-full">
+          <DialogHeader className="space-y-3 pb-2">
+            <DialogTitle className="gradient-text text-xl font-bold">Get in Touch</DialogTitle>
+            <DialogDescription className="text-sm">
               Choose your preferred way to contact us
             </DialogDescription>
           </DialogHeader>
-          <div className="flex flex-col gap-4 py-4">
+          <div className="flex flex-col gap-3 pt-2">
             {/* Email */}
             <a
               href="mailto:hello@altara.in"
-              className="flex items-center gap-4 p-4 rounded-lg border hover:bg-muted/30 transition-all duration-200 group"
+              className="flex items-center gap-4 p-5 rounded-lg border hover:bg-muted/30 transition-all duration-200 group"
             >
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-muted/50 transition-colors">
-                <Mail className="h-6 w-6 text-foreground/70" />
-              </div>
-              <div className="flex-1">
+              <Mail className="h-6 w-6 text-foreground/70" />
+              <div className="flex-1 space-y-1">
                 <p className="font-medium text-sm">Email</p>
                 <p className="text-sm text-muted-foreground">hello@altara.in</p>
               </div>
@@ -107,12 +117,10 @@ const Navbar = () => {
             {/* Phone */}
             <a
               href="tel:+918077846426"
-              className="flex items-center gap-4 p-4 rounded-lg border hover:bg-muted/30 transition-all duration-200 group"
+              className="flex items-center gap-4 p-5 rounded-lg border hover:bg-muted/30 transition-all duration-200 group"
             >
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-muted/50 transition-colors">
-                <Phone className="h-6 w-6 text-foreground/70" />
-              </div>
-              <div className="flex-1">
+              <Phone className="h-6 w-6 text-foreground/70" />
+              <div className="flex-1 space-y-1">
                 <p className="font-medium text-sm">Phone</p>
                 <p className="text-sm text-muted-foreground">+91 8077846426</p>
               </div>
@@ -121,12 +129,10 @@ const Navbar = () => {
             {/* WhatsApp */}
             <button
               onClick={handleWhatsAppClick}
-              className="flex items-center gap-4 p-4 rounded-lg border hover:bg-muted/30 transition-all duration-200 group text-left"
+              className="flex items-center gap-4 p-5 rounded-lg border hover:bg-muted/30 transition-all duration-200 group text-left"
             >
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-muted/50 transition-colors">
-                <MessageCircle className="h-6 w-6 text-foreground/70" />
-              </div>
-              <div className="flex-1">
+              <MessageCircle className="h-6 w-6 text-foreground/70" />
+              <div className="flex-1 space-y-1">
                 <p className="font-medium text-sm">WhatsApp</p>
                 <p className="text-sm text-muted-foreground">+91 8077846426</p>
               </div>

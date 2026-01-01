@@ -7,28 +7,20 @@ import {
 
 const faqs = [
   {
-    question: "What is Altara?",
-    answer: "Altara is a technology company that builds intelligent AI products designed for everyday consumers. We focus on creating simple, powerful solutions that seamlessly integrate into daily life.",
-  },
-  {
-    question: "How does the Neo chatbot work?",
-    answer: "Neo is our AI-powered chatbot that provides natural, context-aware conversations. Simply start a conversation by typing your question or request, and Neo will provide accurate, helpful responses instantly.",
-  },
-  {
-    question: "Is Neo free to use?",
-    answer: "Yes, Neo is available for free. You can access it directly on our website or visit neo.altara.in to start using it right away.",
-  },
-  {
     question: "What makes Altara different?",
-    answer: "We believe in simplicity first. Our products hide complexity while making their impact undeniable. We focus on design-first engineering and consumer-centric AI that adapts to you, not the other way around.",
+    answer: "We believe in simplicity first. Our AI products hide complexity while making their impact clear. We focus on design-first engineering and consumer-centric AI that adapts to your business, not the other way around. No clutter. No unnecessary features. Just AI that works.",
   },
   {
-    question: "Can I integrate Altara's solutions into my business?",
-    answer: "Yes, we offer custom AI solutions for businesses. Please reach out through our contact form, and our team will get back to you to discuss your specific needs.",
+    question: "Can Altara's AI Solutions integrate with our existing tools?",
+    answer: "Yes. Our AI solutions are designed to work seamlessly with the tools you already use, including websites, CRMs, support platforms, and internal systems. We prioritize smooth integration and minimal disruption, so your team can start seeing value quickly.",
   },
   {
-    question: "What industries does Altara serve?",
-    answer: "While our consumer products like Neo are available to everyone, we also develop custom AI solutions for various industries including technology, healthcare, finance, and more.",
+    question: "How secure is our data?",
+    answer: "Data security and privacy are a priority for us. Your data is used only to configure and operate your AI solutions, and we follow industry best practices to keep it protected. We never use client data for anything unrelated.",
+  },
+  {
+    question: "How do we get started?",
+    answer: "Getting started is simple. Reach out to us using the contact options on this site, and we'll take time to understand your business and use cases. From there, we'll walk you through personalized demos and help you choose the right way to integrate our AI solutions into your workflows.",
   },
 ];
 
@@ -62,7 +54,7 @@ const FAQSection = () => {
                 <AccordionTrigger className="text-left text-lg font-semibold text-foreground hover:no-underline">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
+                <AccordionContent className="text-base md:text-lg text-muted-foreground leading-relaxed pt-2">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

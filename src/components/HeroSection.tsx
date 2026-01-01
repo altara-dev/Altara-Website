@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section id="hero" className="relative min-h-screen overflow-hidden">
       {/* Background gradient layers */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-muted/20" />
       
@@ -37,7 +37,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-6 relative z-10 pb-[35vh]" style={{ paddingTop: '9rem' }}>
         <div className="flex flex-col items-center">
           {/* Centered Content */}
-          <div className="text-center max-w-5xl animate-fade-in animation-delay-200">
+          <div className="text-center max-w-5xl">
             {/* Main Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight" style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontWeight: 700, letterSpacing: '-0.02em' }}>
               <span className="text-foreground block whitespace-nowrap">Turning AI into real leverage</span>
@@ -45,12 +45,12 @@ const HeroSection = () => {
             </h1>
 
             {/* Subheading */}
-            <p className="text-lg md:text-xl text-muted-foreground max-w-5xl mx-auto animate-fade-in animation-delay-300 mt-4">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-5xl mx-auto mt-4">
               Enterprise AI solutions for marketing, operations, and customer experience.
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animation-delay-400 mt-10">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
               <Button
                 variant="default"
                 size="lg"
